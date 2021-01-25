@@ -1,6 +1,6 @@
 package com.atritripathi.newswise.models
 
 data class Source(
-    val id: String,
+    val id: Any,
     val name: String
 )

@@ -14,7 +14,6 @@ abstract class ArticleDatabase : RoomDatabase() {
     abstract fun articleDao(): ArticleDao
 
     companion object {
-
         @Volatile
         private var INSTANCE: ArticleDatabase? = null
 
@@ -35,6 +34,5 @@ abstract class ArticleDatabase : RoomDatabase() {
                 return instance
             }
         }
-
     }
 }
