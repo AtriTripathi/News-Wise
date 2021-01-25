@@ -47,7 +47,7 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
             tvPublishedAt.text = article.publishedAt
 
             setOnClickListener {
-                onItemClickListener?.let { article }
+                onItemClickListener?.let { it(article) }
             }
         }
     }

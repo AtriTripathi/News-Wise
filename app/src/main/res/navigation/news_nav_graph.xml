@@ -31,7 +31,11 @@
     <fragment
         android:id="@+id/articleFragment"
         android:name="com.atritripathi.newswise.ui.fragments.ArticleFragment"
-        android:label="ArticleFragment" />
+        android:label="ArticleFragment" >
+        <argument
+            android:name="article"
+            app:argType="com.atritripathi.newswise.models.Article" />
+    </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"
         android:name="com.atritripathi.newswise.ui.fragments.SavedNewsFragment"
