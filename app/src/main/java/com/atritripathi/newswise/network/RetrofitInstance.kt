@@ -1,4 +1,4 @@
-package com.atritripathi.newswise.api
+package com.atritripathi.newswise.network
 
 import com.atritripathi.newswise.util.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
@@ -22,7 +22,7 @@ class RetrofitInstance {
                 .build()
         }
 
-        val api by lazy {
+        val api: NewsApi by lazy {
             retrofit.create(NewsApi::class.java)
         }
 

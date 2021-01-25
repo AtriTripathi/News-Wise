@@ -1,4 +1,4 @@
-package com.atritripathi.newswise.api
+package com.atritripathi.newswise.network
 
 import com.atritripathi.newswise.models.NewsResponse
 import com.atritripathi.newswise.util.Constants.Companion.API_KEY
@@ -10,7 +10,7 @@ interface NewsApi {
 
     @GET("v2/top-headlines")
     suspend fun getBreakingNews(
-        @Query("country") countryCode: String = "us",
+        @Query("country") countryCode: String = "in",
         @Query("page") pageNo: Int = 1,
         @Query("apiKey") apiKey: String = API_KEY
     ): Response<NewsResponse>
