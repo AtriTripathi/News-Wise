@@ -2,7 +2,7 @@ package com.atritripathi.newswise.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.atritripathi.newswise.ui.Article
+import com.atritripathi.newswise.models.Article
 
 @Dao
 interface ArticleDao {

@@ -1,4 +1,4 @@
-package com.atritripathi.newswise.ui
+package com.atritripathi.newswise.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

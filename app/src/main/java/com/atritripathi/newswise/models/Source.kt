@@ -1,4 +1,4 @@
-package com.atritripathi.newswise.ui
+package com.atritripathi.newswise.models
 
 data class Source(
     val id: String,

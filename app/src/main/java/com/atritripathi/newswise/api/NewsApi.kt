@@ -1,6 +1,6 @@
 package com.atritripathi.newswise.api
 
-import com.atritripathi.newswise.ui.NewsResponse
+import com.atritripathi.newswise.models.NewsResponse
 import com.atritripathi.newswise.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET

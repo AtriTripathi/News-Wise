@@ -1,4 +1,6 @@
-package com.atritripathi.newswise.ui
+package com.atritripathi.newswise.models
+
+import com.atritripathi.newswise.models.Article
 
 data class NewsResponse(
     val articles: List<Article>,
