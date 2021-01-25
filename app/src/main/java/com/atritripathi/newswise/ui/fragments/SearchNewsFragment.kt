@@ -41,18 +41,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
             )
         }
 
-        var job: Job? = null
-        etSearch.addTextChangedListener { editable ->
-            job?.cancel()
-            job = MainScope().launch {
-                delay(SEARCH_NEWS_TIME_DELAY)
-                editable?.let {
-                    if(editable.toString().isNotBlank()) {
-                        viewModel.searchNews(editable.toString())
-                    }
-                }
-            }
-        }
+        handleNewsSearch()
 
         viewModel.searchNews.observe(viewLifecycleOwner) { response ->
             when(response) {
@@ -70,6 +59,21 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                 }
                 is Resource.Loading -> {
                     showProgressBar()
+                }
+            }
+        }
+    }
+
+    private fun handleNewsSearch() {
+        var job: Job? = null
+        etSearch.addTextChangedListener { editable ->
+            job?.cancel()
+            job = MainScope().launch {
+                delay(SEARCH_NEWS_TIME_DELAY)
+                editable?.let {
+                    if(editable.toString().isNotBlank()) {
+                        viewModel.searchNews(editable.toString())
+                    }
                 }
             }
         }

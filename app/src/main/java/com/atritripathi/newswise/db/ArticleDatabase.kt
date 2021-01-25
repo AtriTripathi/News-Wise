@@ -31,7 +31,7 @@ abstract class ArticleDatabase : RoomDatabase() {
                         .build()
                     INSTANCE = instance
                 }
-                return instance
+                return@getInstance instance
             }
         }
     }

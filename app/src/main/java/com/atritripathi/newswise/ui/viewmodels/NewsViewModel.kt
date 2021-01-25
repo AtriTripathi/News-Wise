@@ -3,6 +3,7 @@ package com.atritripathi.newswise.ui.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.atritripathi.newswise.models.Article
 import com.atritripathi.newswise.models.NewsResponse
 import com.atritripathi.newswise.repository.NewsRepository
 import com.atritripathi.newswise.util.Resource
@@ -51,5 +52,15 @@ class NewsViewModel(
             }
         }
         return Resource.Error(response.message())
+    }
+
+    fun saveArticle(article: Article) = viewModelScope.launch {
+         newsRepository.upsertArticle(article)
+    }
+
+    fun getSavedNews() = newsRepository.getAllArticles()
+
+    fun deleteArticle(article: Article) = viewModelScope.launch {
+        newsRepository.deleteArticle(article)
     }
 }
