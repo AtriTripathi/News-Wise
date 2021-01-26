@@ -1,8 +1,8 @@
 package com.atritripathi.newswise.repository
 
-import com.atritripathi.newswise.network.RetrofitInstance
 import com.atritripathi.newswise.db.ArticleDatabase
 import com.atritripathi.newswise.models.Article
+import com.atritripathi.newswise.network.RetrofitInstance
 
 class NewsRepository(
     val db: ArticleDatabase

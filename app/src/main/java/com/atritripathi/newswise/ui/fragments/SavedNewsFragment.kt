@@ -13,7 +13,6 @@ import com.atritripathi.newswise.ui.NewsActivity
 import com.atritripathi.newswise.ui.viewmodels.NewsViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_saved_news.*
-import kotlinx.android.synthetic.main.fragment_search_news.*
 
 class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
 
@@ -35,7 +34,7 @@ class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
             )
         }
 
-        val itemTouchHelperCallback = object: ItemTouchHelper.SimpleCallback(
+        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
             ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
         ) {
@@ -52,8 +51,9 @@ class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
                 val article = newsAdapter.differ.currentList[itemPosition]
                 viewModel.deleteArticle(article)
                 Snackbar.make(view, "Successfully deleted article", Snackbar.LENGTH_LONG)
-                    .apply { setAction("Undo") { viewModel.saveArticle(article) }.show()
-                }
+                    .apply {
+                        setAction("Undo") { viewModel.saveArticle(article) }.show()
+                    }
             }
         }
 
